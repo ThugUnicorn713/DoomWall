@@ -25,8 +25,9 @@ public class PlayerLoco : MonoBehaviour
     private float wallJumpTime = 0.2f;
     private float wallJumpCounter;
     private float wallJumpingDuration = 0.4f;
-    
-    public Vector2 wallJumpPower = new Vector2(8f, 8f);
+
+    [SerializeField]
+    public Vector2 wallJumpPower = new Vector2(8f, 10f);
 
 
     void Update()
