@@ -29,6 +29,8 @@ public class PlayerLoco : MonoBehaviour
     [SerializeField]
     public Vector2 wallJumpPower = new Vector2(8f, 10f);
 
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

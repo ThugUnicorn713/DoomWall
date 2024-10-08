@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -7,8 +9,8 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.CompareTag("Wall"))
         {
-            //SceneManager.LoadScene(playDeath);
-            Destroy(gameObject);
+            SceneManager.LoadScene(playDeath);
+            
         }
     }
 }

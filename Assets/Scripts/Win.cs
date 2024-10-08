@@ -5,6 +5,7 @@ public class Win : MonoBehaviour
 {
     public Timer pauseTimer;
     public GameObject winPanel;
+    public GameObject doomWall, doomWall1;
     
 
     private void Start()
@@ -17,6 +18,8 @@ public class Win : MonoBehaviour
         {
             pauseTimer.GetComponent<Timer>().paused = true;
             winPanel.SetActive(true);
+            doomWall.SetActive(false);
+            doomWall1.SetActive(false);
             //GameManager.instance.PrintScore(); Cant get it to work!
         }
     }
