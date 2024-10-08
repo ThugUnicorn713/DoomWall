@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d855def490098d7418ca6febdf689fc6
+guid: d91a558bdcf77d1428ce236ea1e61162
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6964490872369137311
-    second: Play col_Button_0
+      213: 6900325559400324657
+    second: stoneplat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Play col_Button_0
+      name: stoneplat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 600
-        height: 200
+        width: 221
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 169bcf67378295f90800000000000000
-      internalID: -6964490872369137311
+      spriteID: 13eda9a6981e2cf50800000000000000
+      internalID: 6900325559400324657
       vertices: []
       indices: 
       edges: []

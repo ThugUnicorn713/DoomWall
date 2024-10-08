@@ -8,6 +8,7 @@ public class PlayerLoco : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public Transform wallCheck;
+    public Animator animator;
 
     public LayerMask groundLayer;
     public LayerMask wallLayer;
@@ -57,6 +58,7 @@ public class PlayerLoco : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -64,11 +66,13 @@ public class PlayerLoco : MonoBehaviour
         if (context.performed && IsGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            animator.SetBool("isJumping", true);
         }
 
         if (context.canceled && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            animator.SetBool("isJumping", false);
         }
 
         
@@ -89,6 +93,7 @@ public class PlayerLoco : MonoBehaviour
         {
             isWallSliding = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
+            animator.SetBool("isWallSliding", true);
         }
         
     }
@@ -98,6 +103,7 @@ public class PlayerLoco : MonoBehaviour
         if (isWallSliding)
         {
             isWallJumping = false;
+            animator.SetBool("isWallSliding", false );
             wallJumpingDirection = -transform.localScale.x;
             wallJumpCounter = wallJumpTime;
 
@@ -142,6 +148,7 @@ public class PlayerLoco : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+        //animator.SetFloat("Speed", Mathf.Abs(horizontal));
     }
 
 }
